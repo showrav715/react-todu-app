@@ -18,7 +18,6 @@ const Form = () => {
     }
     setToduList([...toduList, { id: Date.now(), todu }]);
     setTodu("");
-    alert("Todu added successfully");
   };
 
   const handleEdit = ({ id, todu }) => {
@@ -29,7 +28,6 @@ const Form = () => {
   const handleEditTodu = (e) => {
     e.preventDefault();
     if (!todu) {
-      alert("Todu is required");
       return;
     }
     const newList = toduList.map((item) => {
@@ -41,7 +39,6 @@ const Form = () => {
     setToduList(newList);
     setTodu("");
     setEdit({ status: false, id: null, todu: "" });
-    alert("Todu updated successfully");
   };
 
   const handleDelete = (id) => {
